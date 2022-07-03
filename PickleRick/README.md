@@ -39,11 +39,9 @@ Then I've tried to scan the machine with <b>nmap</b> but in general - nothing in
 <img src="./assets/nmap.jpg">
 
 <br/>
-After this "micro-fail" let's try to find interesting locations via <b>dirsearch</b>
+After this "micro-fail" let's try to find interesting locations via <b>dirsearch</b>...and we have the following results
 
 <br/>
-
-...and we have the following results
 
 <img src="./assets/dirsearch.jpg">
 
@@ -73,5 +71,56 @@ To get the content of files I've used bypass via GTFOBINS(popular bins which are
 
 After some attempts I've found that we can read files via <b>git</b>. Use this pattern
 
+```shell
 
-<b></b>
+git diff /dev/null 'FILE-TO-READ'
+
+```
+
+<img src="./assets/git_file_read.jpg">
+
+<br/>
+
+## And we have the first flag
+
+<img src="./assets/flag1.jpg">
+
+
+
+<br/>
+
+## <b>Step 4 - Flag2</b>
+
+Let's get some hint from <code>clue.txt</code>
+
+<img src="./assets/hint.jpg">
+
+Ok,let's do this. But not to spend your time, I'll give you a tip: Go to the <b>/home/rick</b>. Here we'll see the following
+
+<img src="./assets/rick_ls.jpg">
+
+## And grab the second file
+
+<img src="./assets/flag2.jpg">
+
+
+
+<br/>
+
+## <b>Step 5 - Flag3</b>
+
+You can also use flag <b>-a</b> to get the hidden dirs. For example
+
+<img src="./assets/ubuntu.jpg">
+
+I've tried to read SSH keys, find secrets in .bash* files but nothing. We don't have rights. BTW,later I've noticed that we have so high privilleges(via <code>sudo -l</code>)
+
+<img src="./assets/sudo.jpg">
+
+## <b>Let's use reverse shell</b>
+
+Go to https://www.revshells.com/ and copy a shell for Python3
+
+<img src="./assets/shell.jpg">
+
+Run a listener locally and force connection. Then run <code>sudo bash</code> and you're <b>root</b> !!!. Now find the third flag in home directory
