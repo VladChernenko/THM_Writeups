@@ -6,7 +6,7 @@
 
 </div>
 
-<p><b>Level</b>:EASY</p>
+<p><b>Level</b>:MEDIUM</p>
 
 <p><b>Link</b>:<a href="https://tryhackme.com/room/securesdlc">https://tryhackme.com/room/securesdlc</a></p>
 
