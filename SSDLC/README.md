@@ -1,4 +1,4 @@
-# THM - SSDLC
+# TryHackMe - SSDLC
 
 <div align="center">
 
